@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PKGINSTALL="apt install -y"
+PKGINSTALL=$(setup-scripts/detect-pkginstall)
 
 $PKGINSTALL curl zsh git
 
@@ -9,7 +9,7 @@ export RUNZSH=no
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 FAIL=1
-if [[ $? == 1 ]]; then
+if [[ "$?" == "1" ]]; then
   FAIL=1
 fi
 
@@ -19,7 +19,7 @@ if [ ! -d ~/.oh-my-zsh ]; then
 fi
 
 if [ ! -f ~/.zshrc ]; then
-  echo .zshrc not found.
+  echo ".zshrc not found."
   exit 1
 fi
 
@@ -44,7 +44,7 @@ sed -i "s/^plugins=./plugins=($PLUGINS/g" ~/.zshrc
 echo
 
 if [[ "$FAIL" == "1" ]]; then
-  echo "Oh my zsh already installed, proceeding with plugin installation. If you have custom plugin configuration, you will need to edit it manually."
+  echo "Oh my zsh already installed. If you have custom plugin configuration, you may need to edit it manually."
 else
   echo "Oh my zsh installed."
 fi

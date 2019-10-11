@@ -1,0 +1,17 @@
+#!/bin/bash
+
+if [ ! -z "$PKGINSTALL" ]; then
+  echo "$PKGINSTALL"
+  exit 0
+fi
+
+PATH=$(which apt-get)
+FOUND=$?
+if [ "$FOUND" -eq "0" ]; then
+  echo "${PATH} install -y"
+  exit 0
+fi
+
+echo "Package install command not detected, set PKGINSTALL to eg. 'apt install -y'"
+
+exit 1

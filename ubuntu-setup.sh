@@ -2,6 +2,7 @@
 
 echo "setup-ubuntu.sh: starting"
 
-setup-scripts/download-zsh.sh
+echo "setup-ubuntu.sh: download zsh"
+setup-scripts/download-zsh
 
 echo "setup-ubuntu.sh: done"

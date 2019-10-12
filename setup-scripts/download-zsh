@@ -41,6 +41,12 @@ done
 sed -i "s/^plugins=./plugins=($PLUGINS/g" ~/.zshrc
 
 
+cp setup-scripts/aliases ~/.aliases
+
+echo >> ~/.zshrc
+echo "source ~/.aliases" >> ~/.zshrc
+
+
 echo
 
 if [[ "$FAIL" == "1" ]]; then

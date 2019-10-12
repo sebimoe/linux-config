@@ -1,13 +1,15 @@
 # Grouped for easy commenting out single aliases or entire groups
 
 function git_aliases() {
-  alias gits="git status"
-  alias gitl="git log"
-  alias gitc="git commit --message"
+  alias gis="git status"
+  alias gil="git log"
+  alias giaa="git add -vA"
+  alias gic="git commit --message"
 }
 git_aliases
 
 function docker_aliases() {
+  alias dok="docker"
   alias doka="docker attach"
   alias doke="docker exec --interactive --tty"
 }

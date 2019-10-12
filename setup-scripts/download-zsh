@@ -6,7 +6,7 @@ $PKGINSTALL curl zsh git
 
 export RUNZSH=no
 
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+yes | sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 FAIL=1
 if [[ "$?" == "1" ]]; then

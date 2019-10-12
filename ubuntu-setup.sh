@@ -7,7 +7,7 @@ apt update
 
 PACKAGES="htop nano git curl wget"
 echo "setup-ubuntu.sh: apt install $PACKAGES"
-apt install -y "$PACKAGES"
+apt install -y $PACKAGES
 
 echo "setup-ubuntu.sh: download zsh"
 setup-scripts/download-zsh
